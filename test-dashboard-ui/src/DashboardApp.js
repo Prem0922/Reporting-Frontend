@@ -97,12 +97,12 @@ function NewDashboard() {
                     typeResponse,
                     defectsResponse
                 ] = await Promise.all([
-                    fetch('http://localhost:5000/api/requirements'),
-                    fetch('http://localhost:5000/api/testcases'),
-                    fetch('http://localhost:5000/api/testruns'),
-                    fetch('http://localhost:5000/api/transitmetricsdaily'),
-                    fetch('http://localhost:5000/api/testtypesummary'),
-                    fetch('http://localhost:5000/api/defects')
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/requirements'),
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/testcases'),
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/testruns'),
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/transitmetricsdaily'),
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/testtypesummary'),
+                    fetch('https://reporting-backend-kpoz.onrender.com/api/defects')
                 ]);
 
                 const [
@@ -657,15 +657,15 @@ export default function DashboardApp() {
         } else if (currentMenuItem === 'Requirements') {
             setLoading(false); return;
         } else if (currentMenuItem === 'Structured Test Cases') {
-            apiUrl = 'http://localhost:5000/api/testcases';
+            apiUrl = 'https://reporting-backend-kpoz.onrender.com/api/testcases';
         } else if (currentMenuItem === 'Test Runs') {
-            apiUrl = 'http://localhost:5000/api/testruns';
+            apiUrl = 'https://reporting-backend-kpoz.onrender.com/api/testruns';
         } else if (currentMenuItem === 'Defects') {
             setLoading(false); return;
         } else if (currentMenuItem === 'Test Type Summary') {
-            apiUrl = 'http://localhost:5000/api/testtypesummary';
+            apiUrl = 'https://reporting-backend-kpoz.onrender.com/api/testtypesummary';
         } else if (currentMenuItem === 'Transit Metrics Daily') {
-            apiUrl = 'http://localhost:5000/api/transitmetricsdaily';
+            apiUrl = 'https://reporting-backend-kpoz.onrender.com/api/transitmetricsdaily';
         } else if (currentMenuItem === 'Live' || currentMenuItem === 'Robot Status') {
             setLoading(false); return;
         }
