@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        const res = await fetch('http://localhost:5000/api/me', {
+        const res = await fetch('https://reporting-backend-kpoz.onrender.com/api/me', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (!res.ok) {
